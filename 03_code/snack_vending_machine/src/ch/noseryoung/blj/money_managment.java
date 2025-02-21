@@ -11,7 +11,7 @@ public class  money_managment {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int money_first = 20;
+        double money_talks = 20;
         System.out.println("Your balance is 20 CHF");
 
 
@@ -19,6 +19,7 @@ public class  money_managment {
         String description = "";
         String product_id="";
         double price = 0;
+
 
 
         new Item(name,description, product_id,price); {}
@@ -51,7 +52,7 @@ public class  money_managment {
                 "|---------------------------|\n" +
                 "| [0] Exit                   |\n" +
                 "|___________________________|\n" +
-                "|  [Geld: ___ CHF]           |\n" +
+                "|  [Geld:"+money_talks+" ___ CHF]           |\n" +
                 "|  Auswahl: __               |\n" +
                 "|___________________________|\n");
         int user_chosses;
@@ -68,58 +69,57 @@ public class  money_managment {
 
 
 
-            double newbalance=money_first;
             switch (user_chosses) {
                 case 1:
-                    newbalance = money_first - 2.7;
-                    System.out.println(newbalance);
+                    money_talks -= 2.7;
+                    System.out.println(money_talks);
                     break;
                 case 2:
-                    newbalance = money_first - 13.5;
+                    newbalance = money_talks - 13.5;
                     System.out.println(newbalance);
                     break;
                 case 3:
-                    newbalance = money_first - 3.5;
+                    newbalance = money_talks - 3.5;
                     System.out.println(newbalance);
                     break;
                 case 4:
-                    newbalance = money_first - 2.5;
+                    newbalance = money_talks - 2.5;
                     System.out.println(newbalance);
                     break;
                 case 5:
-                    newbalance = money_first - 7.0;
+                    newbalance = money_talks - 7.0;
                     System.out.println(newbalance);
                     break;
                 case 6:
-                    newbalance = money_first - 4.0;
+                    newbalance = money_talks - 4.0;
                     System.out.println(newbalance);
                     break;
                 case 7:
-                    newbalance = money_first - 3.0;
+                    newbalance = money_talks - 3.0;
                     System.out.println(newbalance);
                     break;
                 case 8:
-                    newbalance = money_first - 2.2;
+                    newbalance = money_talks - 2.2;
                     System.out.println(newbalance);
                     break;
                 case 9:
-                    newbalance = money_first - 6.5;
+                    newbalance = money_talks - 6.5;
                     System.out.println(newbalance);
                     break;
                 case 10:
-                    newbalance = money_first - 12.0;
+                    newbalance = money_talks - 12.0;
                     System.out.println(newbalance);
                     break;
                 case 11:
-                    newbalance = money_first - 10.5;
+                    newbalance = money_talks - 10.5;
                     System.out.println(newbalance);
                     break;
                 case 12:
-                    newbalance = money_first - 3.8;
+                    newbalance = money_talks - 3.8;
                     System.out.println(newbalance);
                     break;
                 case 13:
-                    newbalance = money_first - 5.0;
+                    newbalance = money_talks - 5.0;
                     System.out.println(newbalance);
                     break;
                 case 0:
@@ -146,7 +146,7 @@ public class  money_managment {
                     "|---------------------------|\n" +
                     "| [0] Exit                   |\n" +
                     "|___________________________|\n" +
-                    "|  [Geld: ___ CHF]           |\n" +
+                    "|  [Geld: ___ "+money_talks+"CHF]           |\n" +
                     "|  Auswahl:" +user_chosses+": __               |\n" +
                     "|___________________________|\n");
 
