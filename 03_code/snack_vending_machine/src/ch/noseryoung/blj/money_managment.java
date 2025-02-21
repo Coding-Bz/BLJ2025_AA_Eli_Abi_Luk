@@ -1,11 +1,164 @@
 package ch.noseryoung.blj;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
 //By Elif
-public class money_managment {
+public class  money_managment {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int money_first = 20;
+        System.out.println("Your balance is 20 CHF");
+
+
+        String name="";
+        String description = "";
+        String product_id="";
+        double price = 0;
+
+
+        new Item(name,description, product_id,price); {}
+        ArrayList<Item> vending_machine = new ArrayList<Item>();
+        vending_machine.add(new Item("FocusWater", "Vitamin water from Switzerland", "1", 2.7));
+        vending_machine.add(new Item("Döner", "A delicious food from Türkiye", "2", 13.5 ));
+        vending_machine.add(new Item("Baklava", "Sweet desert from Türkiye", "3", 3.5));
+        vending_machine.add(new Item("Rivella", "Popular Swiss soft drink", "5", 2.5));
+        vending_machine.add(new Item("Bratwurst", "Swiss grilled sausage", "6", 7.0));
+        vending_machine.add(new Item("Toblerone", "Famous Swiss chocolate", "7", 4.0));
+        vending_machine.add(new Item("Mate Tee", "Traditional drink from Argentina", "8", 3.0));
+        vending_machine.add(new Item("Bretzel", "German twisted bread", "9", 2.2));
+        vending_machine.add(new Item("Poutine", "Canadian fries with gravy and cheese curds", "10", 6.5));
+        vending_machine.add(new Item("Sushi", "Japanese rice and fish rolls", "11", 12.0));
+        vending_machine.add(new Item("Pizza Margherita", "Classic Italian pizza", "12", 10.5));
+        vending_machine.add(new Item("Churros", "Spanish fried dough with sugar", "13", 3.8));
+        vending_machine.add(new Item("Kimchi", "Korean fermented cabbage", "14", 5.0));
+
+
+        System.out.println("___________________________\n" +
+                "|       SNACK AUTOMAT       |\n" +
+                "|---------------------------|\n" +
+                "| [1] FocusWater  [2] Döner  |\n" +
+                "| [3] Baklava     [4] Rivella|\n" +
+                "| [5] Bratwurst   [6] Tobler.|\n" +
+                "| [7] Mate Tee    [8] Bretzel|\n" +
+                "| [9] Poutine    [10] Sushi  |\n" +
+                "|[11] Pizza      [12] Churros|\n" +
+                "|[13] Kimchi                 |\n" +
+                "|---------------------------|\n" +
+                "| [0] Exit                   |\n" +
+                "|___________________________|\n" +
+                "|  [Geld: ___ CHF]           |\n" +
+                "|  Auswahl: __               |\n" +
+                "|___________________________|\n");
+        int user_chosses;
+        do {
+
+
+
+
+            System.out.println("Please enter the product you want to choose");
+            user_chosses = scanner.nextInt();
+            if (user_chosses > 20){
+                System.out.println("Please anter a number between 1-20");
+            }
+
+
+
+            double newbalance=money_first;
+            switch (user_chosses) {
+                case 1:
+                    newbalance = money_first - 2.7;
+                    System.out.println(newbalance);
+                    break;
+                case 2:
+                    newbalance = money_first - 13.5;
+                    System.out.println(newbalance);
+                    break;
+                case 3:
+                    newbalance = money_first - 3.5;
+                    System.out.println(newbalance);
+                    break;
+                case 4:
+                    newbalance = money_first - 2.5;
+                    System.out.println(newbalance);
+                    break;
+                case 5:
+                    newbalance = money_first - 7.0;
+                    System.out.println(newbalance);
+                    break;
+                case 6:
+                    newbalance = money_first - 4.0;
+                    System.out.println(newbalance);
+                    break;
+                case 7:
+                    newbalance = money_first - 3.0;
+                    System.out.println(newbalance);
+                    break;
+                case 8:
+                    newbalance = money_first - 2.2;
+                    System.out.println(newbalance);
+                    break;
+                case 9:
+                    newbalance = money_first - 6.5;
+                    System.out.println(newbalance);
+                    break;
+                case 10:
+                    newbalance = money_first - 12.0;
+                    System.out.println(newbalance);
+                    break;
+                case 11:
+                    newbalance = money_first - 10.5;
+                    System.out.println(newbalance);
+                    break;
+                case 12:
+                    newbalance = money_first - 3.8;
+                    System.out.println(newbalance);
+                    break;
+                case 13:
+                    newbalance = money_first - 5.0;
+                    System.out.println(newbalance);
+                    break;
+                case 0:
+                    System.out.println("Program cancelled");
+                    break;
+                default:
+                    System.out.println("Please enter a number between 1-13");
+            }
 
 
 
 
 
+            System.out.println("  ___________________________\n" +
+                    "|       SNACK AUTOMAT       |\n" +
+                    "|---------------------------|\n" +
+                    "| [1] FocusWater  [2] Döner  |\n" +
+                    "| [3] Baklava     [4] Rivella|\n" +
+                    "| [5] Bratwurst   [6] Tobler.|\n" +
+                    "| [7] Mate Tee    [8] Bretzel|\n" +
+                    "| [9] Poutine    [10] Sushi  |\n" +
+                    "|[11] Pizza      [12] Churros|\n" +
+                    "|[13] Kimchi                 |\n" +
+                    "|---------------------------|\n" +
+                    "| [0] Exit                   |\n" +
+                    "|___________________________|\n" +
+                    "|  [Geld: ___ CHF]           |\n" +
+                    "|  Auswahl:" +user_chosses+": __               |\n" +
+                    "|___________________________|\n");
 
-}
+        } while (user_chosses !=0);
+
+
+
+
+
+    for (Item item: vending_machine){
+
+        System.out.println(item);
+
+    }
+    }}
