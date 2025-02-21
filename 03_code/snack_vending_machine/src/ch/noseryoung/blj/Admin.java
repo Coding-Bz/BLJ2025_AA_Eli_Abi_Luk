@@ -1,4 +1,4 @@
 package ch.noseryoung.blj;
 
-public class Test2 {
+public class Admin {
 }
