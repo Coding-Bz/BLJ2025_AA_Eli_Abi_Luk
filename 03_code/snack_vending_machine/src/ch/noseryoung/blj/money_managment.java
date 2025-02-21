@@ -69,59 +69,8 @@ public class  money_managment {
 
 
 
-            switch (user_chosses) {
-                case 1:
-                    money_talks -= 2.7;
-                    System.out.println(money_talks);
-                    break;
-                case 2:
-                    newbalance = money_talks - 13.5;
-                    System.out.println(newbalance);
-                    break;
-                case 3:
-                    newbalance = money_talks - 3.5;
-                    System.out.println(newbalance);
-                    break;
-                case 4:
-                    newbalance = money_talks - 2.5;
-                    System.out.println(newbalance);
-                    break;
-                case 5:
-                    newbalance = money_talks - 7.0;
-                    System.out.println(newbalance);
-                    break;
-                case 6:
-                    newbalance = money_talks - 4.0;
-                    System.out.println(newbalance);
-                    break;
-                case 7:
-                    newbalance = money_talks - 3.0;
-                    System.out.println(newbalance);
-                    break;
-                case 8:
-                    newbalance = money_talks - 2.2;
-                    System.out.println(newbalance);
-                    break;
-                case 9:
-                    newbalance = money_talks - 6.5;
-                    System.out.println(newbalance);
-                    break;
-                case 10:
-                    newbalance = money_talks - 12.0;
-                    System.out.println(newbalance);
-                    break;
-                case 11:
-                    newbalance = money_talks - 10.5;
-                    System.out.println(newbalance);
-                    break;
-                case 12:
-                    newbalance = money_talks - 3.8;
-                    System.out.println(newbalance);
-                    break;
-                case 13:
-                    newbalance = money_talks - 5.0;
-                    System.out.println(newbalance);
-                    break;
+            money_talks -= vending_machine.get(user_chosses - 1).getPrice;
+
                 case 0:
                     System.out.println("Program cancelled");
                     break;
