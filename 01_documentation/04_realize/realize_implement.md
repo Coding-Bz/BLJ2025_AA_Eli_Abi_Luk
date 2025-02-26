@@ -5,18 +5,14 @@
 2. Issues Encountered
 
 ## Development of the Vending Machine
-1. Jeder Startete 
+1. 
 
 ## Issues Encountered
-* Issue 1:
-  * 
-  * 
-  * 
+* Issue 1: 
+  * Mit Datentypen probleme gehabt
+  * Nicht verstanden wie von String zu Integer machen, ohne das es crashed 
+  * Online herausgefungen
 * Issue 2:
-  * 
-  * 
-  * 
-* Issue 3:
-  * 
-  * 
-  * 
+  * Zwei Leute am selben Code gearbeitet
+  * Schwierigkeiten gehabt den Code vom anderen zu verstehen
+  * In zukunft nicht mehr machen
