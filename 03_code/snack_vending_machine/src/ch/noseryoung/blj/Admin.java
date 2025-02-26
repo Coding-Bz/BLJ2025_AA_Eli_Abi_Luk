@@ -12,7 +12,7 @@ public class Admin {
     }
 
     public void adminMenu(ArrayList<Item> vendingMachine) {
-        System.out.println("\n=== ADMIN MENU ===");
+        System.out.println("\n/// ADMIN MENU ///");
         System.out.println("1. Restock Items");
         System.out.println("2. Increase All Prices");
         System.out.println("3. Increase Single Item Price");
@@ -38,7 +38,7 @@ public class Admin {
                     showStockStatus(vendingMachine);
                     break;
                 case "5":
-                    System.out.println("Exiting admin menu...");
+                    System.out.println("Admin menu...");
                     break;
                 default:
                     System.out.println("\u001B[31 Wrong Input\u001B[0m");
@@ -47,14 +47,14 @@ public class Admin {
     }
 
     private void restockItems(ArrayList<Item> vendingMachine) {
-        System.out.println("\n=== RESTOCKING ITEMS ===");
+        System.out.println("\n/// RESTOCKING ITEMS //");
         for (Item item : vendingMachine) {
             if (item.getQuantity() < 3) {
                 System.out.println("Restocking " + item.getName() + "...");
                 item.restock();
             }
         }
-        System.out.println("\u001B[32mAll eligible items have been restocked!\u001B[0m");
+        System.out.println("\u001B[32mAll items have been restocked!\u001B[0m");
     }
 
     private void increaseAllPrices(ArrayList<Item> vendingMachine) {
@@ -71,7 +71,7 @@ public class Admin {
     }
 
     private void increaseSinglePrice(ArrayList<Item> vendingMachine) {
-        System.out.println("\n=== INCREASE SINGLE ITEM PRICE ===");
+        System.out.println("\n/// INCREASE SINGLE ITEM PRICE ///");
         for (int i = 0; i < vendingMachine.size(); i++) {
             System.out.println((i + 1) + ". " + vendingMachine.get(i).getName());
         }
@@ -80,20 +80,20 @@ public class Admin {
         try {
             int itemNumber = Integer.parseInt(scanner.nextLine()) - 1;
             if (itemNumber >= 0 && itemNumber < vendingMachine.size()) {
-                System.out.print("Enter price increase percentage (e.g., 10 for 10%): ");
+                System.out.print("Enter price increase percentage (10 for 10%): ");
                 double percentage = Double.parseDouble(scanner.nextLine());
                 vendingMachine.get(itemNumber).changePrice(percentage);
-                System.out.println("\u001B[32mPrice updated successfully!\u001B[0m");
+                System.out.println("\u001B[32mPrice updated.\u001B[0m");
             } else {
-                System.out.println("\u001B[31mInvalid item number!\u001B[0m");
+                System.out.println("\u001B[31mInvalid item number.\u001B[0m");
             }
         } catch (NumberFormatException e) {
-            System.out.println("\u001B[31mInvalid input! Please enter a number.\u001B[0m");
+            System.out.println("\u001B[31mWrong Input. Please enter a number.\u001B[0m");
         }
     }
 
     private void showStockStatus(ArrayList<Item> vendingMachine) {
-        System.out.println("\n=== STOCK STATUS ===");
+        System.out.println("\n/// STOCK STATUS ///");
         for (Item item : vendingMachine) {
             System.out.println(item.getName() + ": " + item.getQuantity() + " units - Price: " + item.getPrice() + " CHF");
         }
