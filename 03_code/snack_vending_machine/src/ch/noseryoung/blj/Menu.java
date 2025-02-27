@@ -3,26 +3,20 @@ package ch.noseryoung.blj;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 public class Menu {
+    private static final Scanner scanner = new Scanner(System.in);
 
-    private static Scanner scanner = new Scanner(System.in);
-
-
-
-    // TODO: Maybe do more Outsourcing in menuLoop
-    // TODO: Maybe make design better
-    public static void menuLoop() {
-
+    public static void menuLoop() throws InterruptedException {
         // Setup
-        double userMoney = 20;
+        double userMoney = 40;
         boolean programStatus = true; // If the programm should still continue running
         ArrayList<Item> vendingMachine = new ArrayList<Item>();
         addStartingItems(vendingMachine);
 
+        Admin admin = new Admin(scanner);
+
         welcomeMessage();
-        boolean controll = false;
+
         String userInput;
         do {
             System.out.print("Enter Start to begin the program: ");
@@ -30,62 +24,66 @@ public class Menu {
             if (!userInput.toUpperCase().startsWith("S")){
                 System.out.println("Please enter Start");
             }
+            if (userInput.equals("AlphaSigma")) {
+                admin.adminMenu(vendingMachine);
+                continue;
+            }
+            if (userInput.equalsIgnoreCase("cancel")){
+                return;
+            }
+
         } while (!userInput.toUpperCase().startsWith("S"));      //Change: Accepting as long as first letter 's' | 'S'
 
 
         while (programStatus) {
-
             printVendingMachine(vendingMachine);
-
             // User Item selection process
             String userChoice;
             do {
-                System.out.print("\nPlease enter the product number you want to choose: ");
+                System.out.print("\nPlease enter the product number you want to choose(or type 'cancel' to exit): ");
                 userChoice = scanner.nextLine();
-
-                if (userChoice.equalsIgnoreCase("cancel") || userChoice.equalsIgnoreCase("secret Key")) {
-                    break;
+                if (userChoice.equalsIgnoreCase("cancel")) {
+                  return;
+                }
+                if (userChoice.equals("AlphaSigma")) {
+                    admin.adminMenu(vendingMachine);
+                    printVendingMachine(vendingMachine);
+                    continue;
                 }
 
-                else if (stringToInt(userChoice) < 1 || stringToInt(userChoice) > vendingMachine.size()) {
-                    System.out.println("Please give a number wich exists actually");
-                 controll=true;
-                }
+            } while (!isValidChoice(userChoice, vendingMachine.size()));
 
-                else {
-                    controll=false;
-                }
-                // TODO: Error-Message if number of non existing item and if random text was entered 👌
-            } while (controll);
-
-
-            if (userChoice.equalsIgnoreCase("cancel")) {
-                programStatus = false;
-                break;
+            if(stringToInt(userChoice) < 1 || stringToInt(userChoice) > vendingMachine.size()) {
+                System.out.println("Please give a number wich exists actually");
+                continue;
             }
-            // Admin function if secret Key was entered
-            if (userChoice.equalsIgnoreCase("secret Key")) { // TODO: Add real secret key
-                // TODO: The function from admin is then called here
+
+            // TODO: Error-Message if number of non existing item and if random text was entered 👌
+            if (userChoice.equalsIgnoreCase("cancel")) {
+                return;
+            }
+
+            // Admin function if secret Key was entered // TODO: Add real secret key
+
+            if (userChoice.equals("AlphaSigma")) {
+                admin.adminMenu(vendingMachine);
+                continue;
+            }
+
+            int choice = stringToInt(userChoice);
+            if (choice < 1 || choice > vendingMachine.size()) {
+                System.out.println("Please enter a valid product number.");
+                continue;
+            }
+
+            Item chosenItem = vendingMachine.get(choice - 1);
+            if (userMoney < chosenItem.getPrice()) {
+                System.out.println("You don't have enough money for this item. Please choose a cheaper product.");
                 continue;
             }
 
 
-
-
-
-            System.out.println();
-            Item chosenItem = vendingMachine.get(Integer.parseInt(userChoice) - 1);
-
-
-            chosenItem.printItem();
-            System.out.println();
-
-            // User Input if want it wants to buy
-            String moneyInput;
-
-
-
-
+            /*
 
             do {
                 System.out.println("Your money status: \u001B[33m" + userMoney + "\u001B[0m Franks");
@@ -97,35 +95,26 @@ public class Menu {
                         return;
                     }
                     System.out.println("Please choose a cheapet product");
-
                 }while (userMoney<chosenItem.getPrice())
 
 
-
-
-
-                System.out.print("Please put your money in the snack machine: ");
+                    System.out.print("Please put your money in the snack machine: ");
                 moneyInput = scanner.nextLine(); //Getting a String to reduce errors
                 if (stringToDouble(moneyInput) < chosenItem.getPrice()){
                     System.out.println("You have to put enough money please try again");
                     break;
                 } else if (stringToDouble(moneyInput)> chosenItem.getPrice()) {
                     System.out.println("You gave too much money so you get "+  (stringToInt(moneyInput) - chosenItem.getPrice()) +" back"); } //Rückgeldberechnung
-
-else {
-    continue;
-                    }
-
-
+                else {
+                    continue;
+                }
 
                 if (userChoice.equalsIgnoreCase("cancel")) {
                     break;
                 }
 
-
                 else if (stringToDouble(moneyInput) < 0.01) {
                     System.out.println("Your number shouldn't be less then 1");
-
                 }
 
                 // TODO: Error-Message if item was 0 or less and if random text was entered
@@ -134,31 +123,61 @@ else {
             // Transaction
             // TODO: Make, that the program asks you to put in more money, if you haven't put in enough
 
-
-
-
             userMoney -= chosenItem.getPrice();
             chosenItem.buyOne();
-
-
 
             System.out.println("\u001B[32m\nYour purchase was successful!\u001B[0m");
             System.out.println("You have bought " + chosenItem.getName() + " for " + chosenItem.getPrice() + " Franks");
             System.out.println("You have \u001B[33m" +Math.round(userMoney*100)/100  + "\u001B[0m Franks left");
-
         }
 
+        System.out.println("Thank you for considering us :))");
+    }
+             */
 
+//changed abigail
+            // User Input if want it wants to buy
+            String moneyInput;
+            double moneyInserted;
+            do {
 
+                System.out.println("Your money status: \u001B[33m" + userMoney + "\u001B[0m Franks");
+                System.out.print("Please insert your money (example: 6.5): ");
+                moneyInput = scanner.nextLine();
+                moneyInserted = stringToDouble(moneyInput)*100/100.00;
+               
 
-            System.out.println("Thank you for considering us :))");
+                if (moneyInserted < chosenItem.getPrice()) {
+                    System.out.println("You need to insert enough money");
+                }
+            } while (moneyInserted < chosenItem.getPrice());
+
+            double change = moneyInserted/100.00*100.00 - chosenItem.getPrice();
+
+            if (change > 0) {
+                System.out.println("You get " + Math.round(change *100)/100.00 + " Franks back.");//Rückgeldberechnung
+            }
+
+            userMoney -= chosenItem.getPrice();       //actualize
+            chosenItem.buyOne();
+
+            System.out.println("\u001B[32m\nYour purchase was successful!\u001B[0m");
+            System.out.println("You have bought " + chosenItem.getName() + " for " + chosenItem.getPrice() + " Franks");
+            System.out.println("You have \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks left");
+            Thread.sleep(5000);
+        }
+
+        System.out.println("Thank you for considering us:))");
     }
 
+    private static void printItem() {
+    }
+    //till here
 
-    // |----- Outsourcing -----|
-
-
-
+    private static boolean isValidChoice(String input, int maxSize) {
+        int choice = stringToInt(input);
+        return choice >= 1 && choice <= maxSize;
+    }
 
 
     // |----- Functional Methods -----|
@@ -207,26 +226,27 @@ else {
         System.out.println("This is a vending machine developed for Alphas please choose your item and enjoy it with a smile");
     }
 
+    //complement for visual understanding abigail (proviso)
+    private static void printVendingMachine(ArrayList<Item> vending_machine) {
+        System.out.println("Available Items:");
+        System.out.print(" ___________________________________\n" +
+                "|           SNACK AUTOMAT          |\n" +
+                "|                                  |\n" +
+                "|----------------------------------|\n");
 
-    private static void printVendingMachine (ArrayList < Item > vending_machine) {
-        // TODO: Dynamic display of the snack vending machine
-        /*
-        System.out.println("  ___________________________\n" +
-                    "|       SNACK AUTOMAT       |\n" +
-                    "|---------------------------|\n" +
-                    "| [1] FocusWater  [2] Döner  |\n" +
-                    "| [3] Baklava     [4] Rivella|\n" +
-                    "| [5] Bratwurst   [6] Tobler.|\n" +
-                    "| [7] Mate Tee    [8] Bretzel|\n" +
-                    "| [9] Poutine    [10] Sushi  |\n" +
-                    "|[11] Pizza      [12] Churros|\n" +
-                    "|[13] Kimchi                 |\n" +
-                    "|---------------------------|\n" +
-                    "| [0] Exit                   |\n" +
-                    "|___________________________|\n" +
-                    "|  [Geld: ___ "+ userMoney +"CHF]           |\n" +
-                    "|  Auswahl:" +user_choice+": __               |\n" +
-                    "|___________________________|\n");
-        */
+
+        for (int i = 0; i < vending_machine.size(); i++) {
+            Item item = vending_machine.get(i);
+            System.out.println("| [" + (i + 1) + "] " + item.getName() + " - " + item.getPrice() + " Franks");
+        }
+        System.out.println(
+
+                "|__________________________________|\n" +
+                "|                                  |\n" +
+                "|__________________________________|\n");
     }
+
 }
+
+
+
