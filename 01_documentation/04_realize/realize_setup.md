@@ -1,12 +1,12 @@
 # Setup
 
 ### High-Level 
-1. Team Communication
-2. Setting Up GitHub Repository
-3. Creating File Structure
-4. Connecting IntelliJ IDEA to the Repository
-5. Creating Branches
-6. Performing Test Commits
+1. [Team Communication](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#1-team-communication)
+2. [Setting Up GitHub Repository](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#2-setting-up-github-repository)
+3. [Creating File Structure](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#3-creating-file-structure)
+4. [Connecting IntelliJ IDEA to the Repository](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#4-connecting-intellij-idea-to-the-repository)
+5. [Creating Branches](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#5-creating-branches)
+6. [Performing Test Commits](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_setup.md#6-performing-test-commits)
 
 ## 1. Team Communication
 * We ensured that every morning, as soon as everyone arrived at work, we held a meeting
