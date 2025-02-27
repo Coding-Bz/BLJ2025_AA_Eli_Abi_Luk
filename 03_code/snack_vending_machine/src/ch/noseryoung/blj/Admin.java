@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Admin {
-    private static final String SECRET_KEY = "admin123";
-    private Scanner scanner;
+    private static final String SecretKey= "AlphaSigma";
+    private final Scanner scanner;
 
-    public Admin() {
-        this.scanner = new Scanner(System.in);
+// ---getter---
+    public String getSecretKey() {
+        return SecretKey;
+    }
+// --------
+
+    public Admin(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     public void adminMenu(ArrayList<Item> vendingMachine) {
@@ -47,7 +53,7 @@ public class Admin {
     }
 
     private void restockItems(ArrayList<Item> vendingMachine) {
-        System.out.println("\n/// RESTOCKING ITEMS //");
+        System.out.println("\n/// RESTOCKING ITEMS ///");
         for (Item item : vendingMachine) {
             if (item.getQuantity() < 3) {
                 System.out.println("Restocking " + item.getName() + "...");
