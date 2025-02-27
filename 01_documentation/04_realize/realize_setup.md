@@ -1,47 +1,58 @@
 # Setup
 
-### High-Level Overview
-1. Making Teams Chat
-1. Setup GitHub repository
-2. Creating file structure
-3. Connecting Our Intellij IDEA to the Repository
-4. Creating Branches
-5. Doing Test Commits
+## High-Level Overview
+1. Team Communication
+2. Setting Up GitHub Repository
+3. Creating File Structure
+4. Connecting IntelliJ IDEA to the Repository
+5. Creating Branches
+6. Performing Test Commits
 
-## Making Teams Chat
-* Create Teams Chat to stay connected.
+## 1. Team Communication
+* We ensured that every morning, as soon as everyone arrived at work, we held a meeting
+  * This allowed us to stay updated on recent changes and synchronize our progress
+* We created a Teams chat to stay connected throughout the project
+* Whenever someone needed help, we took the time to assist each other
 
-## Setup GitHub repository
-* Made new repository in Github: [BLJ2025_AA_Eli_Abi_Luk](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk)
-![Github Repository]()
+## 2. Setting Up GitHub Repository
+* Created a new repository on GitHub: [BLJ2025_AA_Eli_Abi_Luk](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk)
 
-## Creating file structure
-* Created the files on gitHub with naming conventions.
+![GitHub Repository]()
+
+## 3. Creating File Structure
+* Established the file structure on GitHub using consistent naming conventions
 * Folder structure:
-  * 01_Documentation (IPERKA phases)
-  * 02_attachments
-  * 03_Code
-  * subfolders of attachments: Presentation, Excel, Images, Drawio
-* Use numbered structure for better organization
-* Collaborate with team member and teacher to share issues
+  * **01_Documentation** (IPERKA phases)
+  * **02_References**
+  * **03_Code**
+  * Subfolders under References: Presentation, Excel, Images, Drawio
+* Used a numbered structure for better organization
+* Collaborated with team members and the teacher to address any issues
+
 ![File Structure]()
 
-##  Connecting Our Intellij IDEA to the Repository
-* Opened repository wit Intellij IDEA.
-![Connected Intellij IDEA Project]()
+## 4. Connecting IntelliJ IDEA to the Repository
+* Opened the repository in IntelliJ IDEA
 
-##  Creating Branches
-* Created Branches for every function we need to implement
-  * main
-  * development (on to main)
-  * documentation (on to development)
-  * feature_admin_abigail (on to development)
-  * feature_money_maintence_elif  (on to development)
-  * feature_item_luka  (on to development)
-* Everybody works on ther features till theye are done and then will merge ther branch to the development
-* If the project is done we will merge development to main
+![Connected IntelliJ IDEA Project]()
+
+## 5. Creating Branches
+We created the following branches:
+  * **main**
+  * **development** (Major updates were pushed here before merging into the main branch)
+    * **money_maintenance_elif** (Menu and money management)
+    * **feature_admin_abigail** (Admin regulations)
+    * **feature_item_luka** (Item control)
+
+* Each team member worked on their respective feature branch until completion before merging into the development branch
+* Once the project was finalized, we merged the development branch into the main branch
+
 ![Branches]()
 
-## Doing Test Commits
-* Did test commits to see how coopearation works.
-* Also did test merges to see how this functions
+## 6. Performing Test Commits
+* We conducted initial test commits to ensure smooth collaboration (commits were labeled as tests)
+* Additionally, we performed test merges to understand the merging process
+
+![Test Commits]()
+
+
