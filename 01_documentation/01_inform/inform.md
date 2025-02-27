@@ -1,9 +1,9 @@
 # Informing
 
 ### High-Level Overview
-1. [What type of information do we need?](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#what-type-of-information-do-we-need)  
-2. [General information needed](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#general-information-needed)  
-3. [Tools and Software](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#tools-and-software)  
+1. [What type of information do we need?](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#1-what-type-of-information-do-we-need)  
+2. [General information needed](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#2-general-information-needed)  
+3. [Tools and Software](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#3-tools-and-software)  
 
 ## 1. What Type of Information Do We Need?
 
