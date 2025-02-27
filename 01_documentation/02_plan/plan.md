@@ -1,12 +1,12 @@
 # Planning
 
 ### High-Level 
-1. [Brainstorming]()
-2. [Developing a Resource Plan]()
-3. [Creating a Task List]()
-4. [Managing the Task List]()
-5. [Defining Project Goals]()
-6. [Monitoring Progress]()
+1. [Brainstorming](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#1-brainstorming)
+2. [Developing a Resource Plan](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#2-resource-plan)
+3. [Creating a Task List](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#3-task-list)
+4. [Managing the Task List](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#4-managing-the-task-list)
+5. [Defining Project Goals](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#5-must-and-can-goals)
+6. [Monitoring Progress](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/02_plan/plan.md#6-monitoring-progress)
 
 ## 1. Brainstorming
 * We ensured that everyone would contribute to the branch input so that the entire team could benefit
@@ -25,7 +25,7 @@ We planned the following:
 * Although we had the same submission deadline, our working hours differed (8h vs. 8.4h), which affected individual schedules
 * Additionally, progress meetings took place during the week, leading to Elif contributing 26 hours to the project, because in the group she had to go to this meeting
 
-![Resource Plan](picture link)
+![Resource Plan](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/ResourcePlan_planning.png)
 
 ## 3. Task List
 * To ensure clarity, we documented the task list on Notion and shared the folder with the team
@@ -33,7 +33,7 @@ We planned the following:
 * The task list was reviewed at least twice a day. Any modifications were immediately visible and email notifications were sent automatically
 * Tasks were divided into programming and documentation categories for better organization
 
-![Task List](picture link)
+![Task List](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_TaskList_Notion_planning.png)
 
 ## 4. Managing the Task List
 * If we noticed that a task changed or took longer than expected, we adjusted the plan accordingly
@@ -41,7 +41,7 @@ We planned the following:
   * Some used handwritten notes, while others utilized Microsoft To-Do with time allocations
 * Tasks were continuously prioritized based on effort and importance, ensuring that must-have requirements were met first
 
-![Managing Task List](picture link)
+![Managing Task List](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_ManageTaskList.png)
 
 ## 5. Must and Can Goals
 We applied the IPERKA method to categorize must-have and can goals
@@ -64,5 +64,5 @@ Can Goals:
 * We compared Actual Effort vs. Estimated Effort to track progress
   * If we fell behind schedule, we documented the issue in Notion made necessary adjustments and informed the team (per teams or personal)
 
-![Checking Progress](picture link)
+![Checking Progress](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_ProgresNotion_planning.png)
 
