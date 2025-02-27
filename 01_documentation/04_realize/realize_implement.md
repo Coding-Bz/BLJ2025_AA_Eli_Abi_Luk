@@ -1,10 +1,10 @@
 # Implement
 
 ### High-Level 
-1. Design Vending Machine
-2. Development of the Vending Machine
-3. Way of working on the Code
-4. Issues Encountered
+1. [Design Vending Machine](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#1-design-vending-machine)
+2. [Development of the Vending Machine](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#2-development-of-the-vending-machine)
+3. [Way of working on the Code](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#3-way-of-working-on-the-code)
+4. [Issues Encountered](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#4-issues-encountered)
 
 ## 1. Design Vending Machine
 Below you will see the output design of the vending machine:
