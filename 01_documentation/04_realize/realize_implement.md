@@ -1,15 +1,15 @@
 # Implement
 
 ### High-Level 
-1. Visualization Vending Machine
-2. Development of the Vending Machine
-3. Way of working on the Code
-4. Issues Encountered
+1. [Design Vending Machine](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#1-design-vending-machine)
+2. [Development of the Vending Machine](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#2-development-of-the-vending-machine)
+3. [Way of working on the Code](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#3-way-of-working-on-the-code)
+4. [Issues Encountered](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/04_realize/realize_implement.md#4-issues-encountered)
 
-## 1. Visualization Vending Machine
+## 1. Design Vending Machine
 Below you will see the output design of the vending machine:
 
-![Visualization DesignOutput Code]()
+![Visualization DesignOutput Code](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_Visualization%20Design%20Machien%20Output_realize_implement.png)
 
 ## 2. Development of the Vending Machine
 We have divided it into three classes and each person has taken over one class. Following you will see three examples of codes from each class:
@@ -24,25 +24,28 @@ We have divided it into three classes and each person has taken over one class. 
   * The user's balance is updated
 * The program waits 3.5seconds before continuing
 
-![Payment Process (Menu.java)]()
+![Payment Process (Menu.java)](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/MenuClass_realize%20implement.png)
+
+---
 
 **Change Price and buy Item (Item.java)**
-changePrice (double priceChangePercent)
 * Calculates a new price based on a percentage change (dynamical adjusts the prices)
-Process:  
-     1. Convert the percentage into a multiplier: (priceChangePercent / 100) + 1  
-     2. Multiply the current price by the multiplier to adjust the price
-     3. Round the result to two decimal places using Math.round(... * 100) / 100
+* Process:  
+  * Convert the percentage into a multiplier: (priceChangePercent / 100) + 1  
+  * Multiply the current price by the multiplier to adjust the price
+  * Round the result to two decimal places using Math.round(... * 100) / 100
 
 **buyOne()**
-Reduces the quantity of an item after a purchase
+* Reduces the quantity of an item after a purchase
 Process:  
-     1. Check if the item is available (quantity > 0)
-     2. If available, reduce the quantity by 1 
-     3. If not available, output an error message: "ERROR: You can't buy this item, it is sold out!"  
+  * Check if the item is available (quantity > 0)
+  * If available, reduce the quantity by 1 
+  * If not available, output an error message: "ERROR: You can't buy this item, it is sold out!"  
 Called every time a iser buys an item to ensure they can't buy out-of-stock items 
 
-![Change Price and buy Item (Item.java)]()
+![Change Price and buy Item (Item.java)](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/ItemClass_realize%20implement.png)
+
+---
 
 **Increase Single Item Price (Admin.java)**
 * Prompts the admin to enter the number-> Checks if the input is valid 
@@ -50,11 +53,13 @@ Called every time a iser buys an item to ensure they can't buy out-of-stock item
 * Applies the new price using changePrice(percentage)
 * If the input is invalid, an error message is displayed
 
-![Increase Single Item Price (Admin.java)]()
+![Increase Single Item Price (Admin.java)](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/admin_realize%20implement.png)
 
 
 ## 3. Way of Working on the Code  
 We provided each other feedback on the code when it was checked or when a different perspective was needed to keep track of the code. For example, TODO comments were added in the code, or old code blocks were commented out so that we could still see how the old code was rewritten into the new one, allowing us to compare and ensure nothing was lost.
+
+![CommunicationCode](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_CommunicationTeam_Code_RealizePhase.png)
 
 ## 4. Issues Encountered  
 * Issue 1:  
@@ -65,4 +70,11 @@ We provided each other feedback on the code when it was checked or when a differ
 * Issue 2:  
   * Two people were working on the same code 
   * Had difficulty understanding each other's code  
-  * In the future we will avoid doing this  
+  * In the future we will avoid doing this
+ 
+* Issue 3:
+  * When we wanted to switch or merge we had sometimes merge problems
+  * In the beginning it was a bit lack of knowledge how to handle it correctly
+  * After some time we could handle it with practice
+    
+![Issue](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_IssuesEncountered_RealizePhase.png)
