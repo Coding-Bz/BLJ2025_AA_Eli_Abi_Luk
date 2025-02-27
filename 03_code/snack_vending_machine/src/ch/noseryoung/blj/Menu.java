@@ -21,16 +21,18 @@ public class Menu {
         do {
             System.out.print("Enter Start to begin the program: ");
             userInput = scanner.nextLine();
-            if (!userInput.toUpperCase().startsWith("S")) {
+
+            if (userInput.equalsIgnoreCase("cancel")) {
+                return;
+            }
+            else if (!userInput.toUpperCase().startsWith("S")) {
                 System.out.println("Please enter Start");
             }
             if (userInput.equals("AlphaSigma")) {
                 admin.adminMenu(vendingMachine);
                 continue;
             }
-            if (userInput.equalsIgnoreCase("cancel")) {
-                return;
-            }
+
 
         } while (!userInput.toUpperCase().startsWith("S"));      //Change: Accepting as long as first letter 's' | 'S'
 
@@ -41,6 +43,7 @@ public class Menu {
             String userChoice;
             do {
                 System.out.print("\nPlease enter the product number you want to choose(or type 'cancel' to exit): ");
+                System.out.println("You have \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks left");
                 userChoice = scanner.nextLine();
                 if (userChoice.equalsIgnoreCase("cancel")) {
                     programStatus = false;
@@ -58,17 +61,7 @@ public class Menu {
                 continue;
             }
 
-            // TODO: Error-Message if number of non existing item and if random text was entered 👌
-            if (userChoice.equalsIgnoreCase("cancel")) {
-                return;
-            }
 
-            // Admin function if secret Key was entered // TODO: Add real secret key
-
-            if (userChoice.equals("AlphaSigma")) {
-                admin.adminMenu(vendingMachine);
-                continue;
-            }
 
             int choice = stringToInt(userChoice);
             if (choice < 1 || choice > vendingMachine.size()) {
@@ -140,7 +133,7 @@ public class Menu {
             String moneyInput;
             double moneyInserted;
             do {
-                System.out.print("Your item cost's "+chosenItem.getPrice());
+                System.out.print("Your item cost's "+chosenItem.getPrice()+" Franks");
                 System.out.println();
                 System.out.println("Your money status: \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks");
                 System.out.print("Please insert your money (example: 6.5): ");
@@ -181,7 +174,7 @@ public class Menu {
             System.out.println("\u001B[32m\nYour purchase was successful!\u001B[0m");
             System.out.println("You have bought " + chosenItem.getName() + " for " + chosenItem.getPrice() + " Franks");
             System.out.println("You have \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks left");
-            Thread.sleep(5000);
+            Thread.sleep(3500);
         }
 
         System.out.println("Thank you for considering us:))");

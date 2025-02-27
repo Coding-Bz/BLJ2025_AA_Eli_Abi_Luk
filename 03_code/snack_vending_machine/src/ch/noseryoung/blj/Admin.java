@@ -45,7 +45,6 @@ public class Admin {
                     break;
                 case "5":
                     System.out.println("Admin menu...");
-                    Admin.see();
                     break;
                 default:
                     System.out.println("\u001B[31 Wrong Input\u001B[0m");
