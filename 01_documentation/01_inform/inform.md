@@ -1,13 +1,11 @@
 # Informing
 
 ### High-Level Overview
-[1. What type of information do we need?](link)  
-[2. General information needed](link)  
-[3. Goals](link)  
-[4. Tools and Software](link)  
-[5. Resources and References](link)  
+1. [What type of information do we need?](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#what-type-of-information-do-we-need)  
+2. [General information needed](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#general-information-needed)  
+3. [Tools and Software](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/01_inform/inform.md#tools-and-software)  
 
-## What Type of Information Do We Need?
+## 1. What Type of Information Do We Need?
 
 **Dates**  
 - Deadlines and due dates for presentations and assignment submission.  
@@ -19,7 +17,7 @@
 **Tools**  
 - Tracking the necessary tools for the project.  
 
-## General Information Needed
+## 2. General Information Needed
 This list provides a comprehensive overview of the general information required for the assignment.  
 
 ### Dates
@@ -73,16 +71,7 @@ This list provides a comprehensive overview of the general information required 
   - The GitHub account should be created by one team member  
   - All trainers must be added as collaborators  
 
-## Goals
-We have defined **must** and **can** goals:  
-
-Must Goals
-- Complete the code without additional features
-
-Can Goals
-- Add extra features to the code
-
-## Tools and Software
+## 3. Tools and Software
 
 **Visual Studio Code**  
 - Used to work on documentation and code in parallel.  
@@ -104,13 +93,3 @@ Can Goals
 - Used for the to-do list and ensuring everyone has access.  
 - [Notion](https://www.notion.so/de/desktop)  
 
-## Resources
-
-**Websites**
-- 
-
-**YouTube**
-- 
-
-**Requirement List**
-- 
