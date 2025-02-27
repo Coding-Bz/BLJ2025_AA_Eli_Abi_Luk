@@ -14,10 +14,13 @@
 * We created a Teams chat to stay connected throughout the project
 * Whenever someone needed help, we took the time to assist each other
 
+![commu](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/AA_TeamCommunication_TOFUListe.jpg)
+![commuNotion](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/Communication_Notion.png)
+
 ## 2. Setting Up GitHub Repository
 * Created a new repository on GitHub: [BLJ2025_AA_Eli_Abi_Luk](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk)
 
-![GitHub Repository]()
+![GitHub Repository](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/documentation_realize_setup_github.jpg)
 
 ## 3. Creating File Structure
 * Established the file structure on GitHub using consistent naming conventions
@@ -29,12 +32,12 @@
 * Used a numbered structure for better organization
 * Collaborated with team members and the teacher to address any issues
 
-![File Structure]()
+![File Structure](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/documentation_realize_setup_file_structure.jpg)
 
 ## 4. Connecting IntelliJ IDEA to the Repository
 * Opened the repository in IntelliJ IDEA
 
-![Connected IntelliJ IDEA Project]()
+![Connected IntelliJ IDEA Project](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/documentation_realize_setup_intellij_idea.jpg)
 
 ## 5. Creating Branches
 We created the following branches:
@@ -47,12 +50,11 @@ We created the following branches:
 * Each team member worked on their respective feature branch until completion before merging into the development branch
 * Once the project was finalized, we merged the development branch into the main branch
 
-![Branches]()
+![Branches](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/02_attachments/01_images/documentation_realize_setup_branches.jpg)
 
 ## 6. Performing Test Commits
 * We conducted initial test commits to ensure smooth collaboration (commits were labeled as tests)
 * Additionally, we performed test merges to understand the merging process
 
-![Test Commits]()
 
 
