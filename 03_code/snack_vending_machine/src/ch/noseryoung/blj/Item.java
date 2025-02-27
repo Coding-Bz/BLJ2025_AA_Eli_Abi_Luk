@@ -31,8 +31,6 @@ public class Item {
         this.quantity = maxQuantity;
     }
 
-
-
     // |----- getters -----|
 
     public String getName() {
@@ -46,8 +44,6 @@ public class Item {
     public int getQuantity() {
         return this.quantity;
     }
-
-
 
     // |----- setters -----|
 
@@ -71,18 +67,13 @@ public class Item {
         // There is no error message, if you try restocking a limited item
     }
 
-
-
     // |----- print -----|
 
     public void printItem() {
-
         System.out.println(this.name.toUpperCase() + "\n---\n" + this.description + "\nprice: " + this.price );
-
         if (this.rarity.equals("limited")) {
             System.out.println("Item is limited. Buy while it's still available!");
         }
-
         if (this.quantity > 3) {
             System.out.println("\u001B[32mItem is available\u001B[0m");
         } else if (this.quantity > 0) {

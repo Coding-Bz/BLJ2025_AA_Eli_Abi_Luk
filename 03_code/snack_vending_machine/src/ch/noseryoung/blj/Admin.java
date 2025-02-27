@@ -18,7 +18,6 @@ public class Admin {
     }
 
     public void adminMenu(ArrayList<Item> vendingMachine) {
-
         Admin.see();
 
         String choice;

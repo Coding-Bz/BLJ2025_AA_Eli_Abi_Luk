@@ -19,7 +19,7 @@ public class Menu {
 
         String userInput;
         do {
-            System.out.print("Enter Start to begin the program: ");
+            System.out.print("Enter 'Start': ");
             userInput = scanner.nextLine();
 
             if (userInput.equalsIgnoreCase("cancel")) {
@@ -30,7 +30,6 @@ public class Menu {
             }
             if (userInput.equals("AlphaSigma")) {
                 admin.adminMenu(vendingMachine);
-                continue;
             }
 
 
@@ -42,16 +41,19 @@ public class Menu {
             // User Item selection process
             String userChoice;
             do {
-                System.out.print("\nPlease enter the product number you want to choose(or type 'cancel' to exit): ");
+                System.out.print("\nPlease enter the product number (type 'cancel' to exit): ");
                 System.out.println("You have \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks left");
                 userChoice = scanner.nextLine();
                 if (userChoice.equalsIgnoreCase("cancel")) {
-                    programStatus = false;
                     return;
                 }
                 if (userChoice.equals("AlphaSigma")) {
                     admin.adminMenu(vendingMachine);
                     printVendingMachine(vendingMachine);
+                }
+                int choiceNum = stringToInt(userChoice);
+                if (choiceNum < 1 || choiceNum > vendingMachine.size()) {
+                    System.out.println("\u001B[31mThere is no product with the number " + userChoice + "!\u001B[0m");
                 }
 
             } while (!isValidChoice(userChoice, vendingMachine.size()));
@@ -60,8 +62,6 @@ public class Menu {
                 System.out.println("Please give a number wich exists actually");
                 continue;
             }
-
-
 
             int choice = stringToInt(userChoice);
             if (choice < 1 || choice > vendingMachine.size()) {
@@ -75,61 +75,7 @@ public class Menu {
                 continue;
             }
 
-
-            /*
-
-            do {
-                System.out.println("Your money status: \u001B[33m" + userMoney + "\u001B[0m Franks");
-                if(userMoney<chosenItem.getPrice()){
-                    System.out.println("You are broke sorry");
-
-                    if (userMoney<1){
-                        System.out.println("You don't have money for any product here");
-                        return;
-                    }
-                    System.out.println("Please choose a cheapet product");
-                }while (userMoney<chosenItem.getPrice())
-
-
-                    System.out.print("Please put your money in the snack machine: ");
-                moneyInput = scanner.nextLine(); //Getting a String to reduce errors
-                if (stringToDouble(moneyInput) < chosenItem.getPrice()){
-                    System.out.println("You have to put enough money please try again");
-                    break;
-                } else if (stringToDouble(moneyInput)> chosenItem.getPrice()) {
-                    System.out.println("You gave too much money so you get "+  (stringToInt(moneyInput) - chosenItem.getPrice()) +" back"); } //Rückgeldberechnung
-                else {
-                    continue;
-                }
-
-                if (userChoice.equalsIgnoreCase("cancel")) {
-                    break;
-                }
-
-                else if (stringToDouble(moneyInput) < 0.01) {
-                    System.out.println("Your number shouldn't be less then 1");
-                }
-
-                // TODO: Error-Message if item was 0 or less and if random text was entered
-            } while (stringToDouble(moneyInput) < 0.01 || userMoney<chosenItem.getPrice());
-
-            // Transaction
-            // TODO: Make, that the program asks you to put in more money, if you haven't put in enough
-
-            userMoney -= chosenItem.getPrice();
-            chosenItem.buyOne();
-
-            System.out.println("\u001B[32m\nYour purchase was successful!\u001B[0m");
-            System.out.println("You have bought " + chosenItem.getName() + " for " + chosenItem.getPrice() + " Franks");
-            System.out.println("You have \u001B[33m" +Math.round(userMoney*100)/100  + "\u001B[0m Franks left");
-        }
-
-        System.out.println("Thank you for considering us :))");
-    }
-             */
-
-//changed abigail
-            // User Input if want it wants to buy
+            // User Input: if it wants to buy
             String moneyInput;
             double moneyInserted;
             do {
@@ -141,31 +87,24 @@ public class Menu {
                 if (moneyInput.equalsIgnoreCase("Cancel")){
                     return;
                     }
-
-
-
                 else if (stringToDouble(moneyInput) > userMoney) {
-
                     do {
                         System.out.println("You don't have that much money");
                         System.out.println("try again");
                         moneyInput = scanner.nextLine();
                     } while (stringToDouble(moneyInput) > userMoney);
-
-
                 }
                 moneyInserted = Math.round(stringToDouble(moneyInput) * 100) / 100.00;
 
+            if (moneyInserted < chosenItem.getPrice()) {
+                System.out.println("\u001B[31mYou need to insert enough money\u001B[0m");
+            }
+        } while (moneyInserted < chosenItem.getPrice());
 
-                if (moneyInserted < chosenItem.getPrice()) {
-                    System.out.println("You need to insert enough money");
-                }
-            } while (moneyInserted < chosenItem.getPrice());
-
-            double change = moneyInserted / 100.00 * 100.00 - chosenItem.getPrice();
+        double change = moneyInserted / 100.00 * 100.00 - chosenItem.getPrice();
 
             if (change > 0) {
-                System.out.println("You get " + Math.round(change * 100) / 100.00 + " Franks back.");//Rückgeldberechnung
+                System.out.println("You get " + Math.round(change * 100) / 100.00 + " Franks back.");//Change calculation
             }
 
             userMoney -= chosenItem.getPrice();       //actualize
@@ -180,15 +119,12 @@ public class Menu {
         System.out.println("Thank you for considering us:))");
     }
 
-
     private static boolean isValidChoice(String input, int maxSize) {
         int choice = stringToInt(input);
         return choice >= 1 && choice <= maxSize;
     }
 
-
     // |----- Functional Methods -----|
-
     private static int stringToInt(String input) {
         try {
             return Integer.parseInt(input);
@@ -207,9 +143,7 @@ public class Menu {
         }
     }
 
-
     private static void addStartingItems(ArrayList<Item> vending_machine) {
-
         vending_machine.add(new Item("FocusWater", "Vitamin water from Switzerland", "default", 2.7));
         vending_machine.add(new Item("Döner", "A delicious food from Türkiye", "default", 13.5));
         vending_machine.add(new Item("Baklava", "Sweet desert from Türkiye", "limited", 3.5));
@@ -226,7 +160,6 @@ public class Menu {
         vending_machine.add(new Item("Alpha-Lighter", "Only Alphas can use it", "limited", 5.0));
     }
 
-
     private static void welcomeMessage() {
         System.out.println("\nWELCOME TO THE SNACK VENDING MACHINE!");
         System.out.println("|//////////////////////////////////////////////////////////////////////////////////////|");
@@ -240,7 +173,6 @@ public class Menu {
                 "|           SNACK AUTOMAT          |\n" +
                 "|                                  |\n" +
                 "|----------------------------------|\n");
-
 
         for (int i = 0; i < vending_machine.size(); i++) {
             Item item = vending_machine.get(i);
