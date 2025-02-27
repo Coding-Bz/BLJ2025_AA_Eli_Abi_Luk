@@ -18,12 +18,8 @@ public class Admin {
     }
 
     public void adminMenu(ArrayList<Item> vendingMachine) {
-        System.out.println("\n/// ADMIN MENU ///");
-        System.out.println("1. Restock Items");
-        System.out.println("2. Increase All Prices");
-        System.out.println("3. Increase Single Item Price");
-        System.out.println("4. Show Stock Status");
-        System.out.println("5. Exit Admin Menu");
+
+        Admin.see();
 
         String choice;
         do {
@@ -33,18 +29,23 @@ public class Admin {
             switch (choice) {
                 case "1":
                     restockItems(vendingMachine);
+                    Admin.see();
                     break;
                 case "2":
                     increaseAllPrices(vendingMachine);
+                    Admin.see();
                     break;
                 case "3":
                     increaseSinglePrice(vendingMachine);
+                    Admin.see();
                     break;
                 case "4":
                     showStockStatus(vendingMachine);
+                    Admin.see();
                     break;
                 case "5":
                     System.out.println("Admin menu...");
+                    Admin.see();
                     break;
                 default:
                     System.out.println("\u001B[31 Wrong Input\u001B[0m");
@@ -104,4 +105,15 @@ public class Admin {
             System.out.println(item.getName() + ": " + item.getQuantity() + " units - Price: " + item.getPrice() + " CHF");
         }
     }
+
+    public static void see() {
+        System.out.println("\n/// ADMIN MENU ///");
+        System.out.println("1. Restock Items");
+        System.out.println("2. Change All Prices");
+        System.out.println("3. Change Single Item Price");
+        System.out.println("4. Show Stock Status");
+        System.out.println("5. Exit Admin Menu");
+
+    }
 }
+

@@ -10,7 +10,7 @@ public class Menu {
         // Setup
         double userMoney = 40;
         boolean programStatus = true; // If the programm should still continue running
-        ArrayList<Item> vendingMachine = new ArrayList<Item>();
+        ArrayList<Item> vendingMachine = new ArrayList<>();
         addStartingItems(vendingMachine);
 
         Admin admin = new Admin(scanner);
@@ -21,14 +21,14 @@ public class Menu {
         do {
             System.out.print("Enter Start to begin the program: ");
             userInput = scanner.nextLine();
-            if (!userInput.toUpperCase().startsWith("S")){
+            if (!userInput.toUpperCase().startsWith("S")) {
                 System.out.println("Please enter Start");
             }
             if (userInput.equals("AlphaSigma")) {
                 admin.adminMenu(vendingMachine);
                 continue;
             }
-            if (userInput.equalsIgnoreCase("cancel")){
+            if (userInput.equalsIgnoreCase("cancel")) {
                 return;
             }
 
@@ -43,17 +43,17 @@ public class Menu {
                 System.out.print("\nPlease enter the product number you want to choose(or type 'cancel' to exit): ");
                 userChoice = scanner.nextLine();
                 if (userChoice.equalsIgnoreCase("cancel")) {
-                  return;
+                    programStatus = false;
+                    return;
                 }
                 if (userChoice.equals("AlphaSigma")) {
                     admin.adminMenu(vendingMachine);
                     printVendingMachine(vendingMachine);
-                    continue;
                 }
 
             } while (!isValidChoice(userChoice, vendingMachine.size()));
 
-            if(stringToInt(userChoice) < 1 || stringToInt(userChoice) > vendingMachine.size()) {
+            if (stringToInt(userChoice) < 1 || stringToInt(userChoice) > vendingMachine.size()) {
                 System.out.println("Please give a number wich exists actually");
                 continue;
             }
@@ -140,22 +140,39 @@ public class Menu {
             String moneyInput;
             double moneyInserted;
             do {
-
-                System.out.println("Your money status: \u001B[33m" + userMoney + "\u001B[0m Franks");
+                System.out.print("Your item cost's "+chosenItem.getPrice());
+                System.out.println();
+                System.out.println("Your money status: \u001B[33m" + Math.round(userMoney * 100) / 100.00 + "\u001B[0m Franks");
                 System.out.print("Please insert your money (example: 6.5): ");
                 moneyInput = scanner.nextLine();
-                moneyInserted = stringToDouble(moneyInput)*100/100.00;
-               
+                if (moneyInput.equalsIgnoreCase("Cancel")){
+                    return;
+                    }
+
+
+
+                else if (stringToDouble(moneyInput) > userMoney) {
+
+                    do {
+                        System.out.println("You don't have that much money");
+                        System.out.println("try again");
+                        moneyInput = scanner.nextLine();
+                    } while (stringToDouble(moneyInput) > userMoney);
+
+
+                }
+                moneyInserted = Math.round(stringToDouble(moneyInput) * 100) / 100.00;
+
 
                 if (moneyInserted < chosenItem.getPrice()) {
                     System.out.println("You need to insert enough money");
                 }
             } while (moneyInserted < chosenItem.getPrice());
 
-            double change = moneyInserted/100.00*100.00 - chosenItem.getPrice();
+            double change = moneyInserted / 100.00 * 100.00 - chosenItem.getPrice();
 
             if (change > 0) {
-                System.out.println("You get " + Math.round(change *100)/100.00 + " Franks back.");//Rückgeldberechnung
+                System.out.println("You get " + Math.round(change * 100) / 100.00 + " Franks back.");//Rückgeldberechnung
             }
 
             userMoney -= chosenItem.getPrice();       //actualize
@@ -170,9 +187,6 @@ public class Menu {
         System.out.println("Thank you for considering us:))");
     }
 
-    private static void printItem() {
-    }
-    //till here
 
     private static boolean isValidChoice(String input, int maxSize) {
         int choice = stringToInt(input);
@@ -201,7 +215,7 @@ public class Menu {
     }
 
 
-    private static void addStartingItems (ArrayList < Item > vending_machine) {
+    private static void addStartingItems(ArrayList<Item> vending_machine) {
 
         vending_machine.add(new Item("FocusWater", "Vitamin water from Switzerland", "default", 2.7));
         vending_machine.add(new Item("Döner", "A delicious food from Türkiye", "default", 13.5));
@@ -220,7 +234,7 @@ public class Menu {
     }
 
 
-    private static void welcomeMessage () {
+    private static void welcomeMessage() {
         System.out.println("\nWELCOME TO THE SNACK VENDING MACHINE!");
         System.out.println("|//////////////////////////////////////////////////////////////////////////////////////|");
         System.out.println("This is a vending machine developed for Alphas please choose your item and enjoy it with a smile");
@@ -242,11 +256,11 @@ public class Menu {
         System.out.println(
 
                 "|__________________________________|\n" +
-                "|                                  |\n" +
-                "|__________________________________|\n");
+                        "|                                  |\n" +
+                        "|__________________________________|\n");
     }
-
 }
+
 
 
 
