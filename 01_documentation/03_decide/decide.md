@@ -1,10 +1,10 @@
 # Deciding
 
 ### High Level
-1. [Team decisions]()
-2. [Real Case]()
-3. [Decision Making]()
-4. [Unchangend Audio Transcript]()
+1. [Team decisions](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/03_decide/decide.md#1-how-our-team-makes-decisions)
+2. [Real Case](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/03_decide/decide.md#2-real-case--the-payment-system-decision)
+3. [Decision Making](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/03_decide/decide.md#3-decision-making)
+4. [Unchangend Audio Transcript](https://github.com/Coding-Bz/BLJ2025_AA_Eli_Abi_Luk/blob/main/01_documentation/03_decide/decide.md#4-audio-transcript-unchanged)
 
 
 ## 1. How Our Team Makes Decisions
