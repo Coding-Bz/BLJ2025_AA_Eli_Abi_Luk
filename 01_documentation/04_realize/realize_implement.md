@@ -1,15 +1,28 @@
 # Implement
 
-### High-Level Overview
-1. Development of the Vending Machine
-2. Visualization Vending Machine
+### High-Level 
+1. Visualization Vending Machine
+2. Development of the Vending Machine
 3. Issues Encountered
 
+## 1. Visualization Vending Machine
+
 ## 1. Development of the Vending Machine
-* We had to write 
+The Menu class contains also the money maintainance
+Payment Process
+* User is prompted to insert money for the selected item
+* The system displays the item price and the user's current balance
+* If the user enters "Cancel", the transaction is aborted
+* If the entered amount is greater than the available balance, the user is asked to re-enter the amount
+* If the entered amount is lower than the item price a warning is displayed and the user must retry
+* Once a valid amount is inserted:
+  * If there is change, it is calculated and displayed
+  * The item is deducted from the vending machine stock
+  * The user's balance is updated
+  * A message is shown
+* The program waits 3.5seconds before continuing
 
 
-## 2. Visualization Vending Machine
 
 ## 3. Issues Encountered
 * Issue 1: 
@@ -22,5 +35,3 @@
   * Schwierigkeiten gehabt den Code vom anderen zu verstehen
   * In zukunft nicht mehr machen
 
-* Issue 3:
-  * 

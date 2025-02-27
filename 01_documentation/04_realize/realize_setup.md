@@ -1,6 +1,6 @@
 # Setup
 
-## High-Level Overview
+### High-Level 
 1. Team Communication
 2. Setting Up GitHub Repository
 3. Creating File Structure
