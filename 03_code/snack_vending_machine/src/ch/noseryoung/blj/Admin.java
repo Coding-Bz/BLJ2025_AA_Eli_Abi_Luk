@@ -3,22 +3,14 @@ package ch.noseryoung.blj;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class Admin {
-    private static final String SecretKey= "AlphaSigma";
-    private final Scanner scanner;
 
-    // ---getter---
-    public String getSecretKey() {
-        return SecretKey;
-    }
-// --------
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public Admin(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
-    public void adminMenu(ArrayList<Item> vendingMachine) {
-        Admin.see();
+    public static void adminMenu(ArrayList<Item> vendingMachine) {
+        Admin.printMenu();
 
         String choice;
         do {
@@ -28,19 +20,19 @@ public class Admin {
             switch (choice) {
                 case "1":
                     restockItems(vendingMachine);
-                    Admin.see();
+                    Admin.printMenu();
                     break;
                 case "2":
                     increaseAllPrices(vendingMachine);
-                    Admin.see();
+                    Admin.printMenu();
                     break;
                 case "3":
                     increaseSinglePrice(vendingMachine);
-                    Admin.see();
+                    Admin.printMenu();
                     break;
                 case "4":
                     showStockStatus(vendingMachine);
-                    Admin.see();
+                    Admin.printMenu();
                     break;
                 case "5":
                     System.out.println("Admin menu...");
@@ -51,7 +43,7 @@ public class Admin {
         } while (!choice.equals("5"));
     }
 
-    private void restockItems(ArrayList<Item> vendingMachine) {
+    private static void restockItems(ArrayList<Item> vendingMachine) {
         System.out.println("\n/// RESTOCKING ITEMS ///");
         for (Item item : vendingMachine) {
             if (item.getQuantity() < 3) {
@@ -62,7 +54,7 @@ public class Admin {
         System.out.println("\u001B[32mAll items have been restocked!\u001B[0m");
     }
 
-    private void increaseAllPrices(ArrayList<Item> vendingMachine) {
+    private static void increaseAllPrices(ArrayList<Item> vendingMachine) {
         System.out.print("\nEnter price increase percentage (10 for 10%): ");
         try {
             double percentage = Double.parseDouble(scanner.nextLine());
@@ -75,7 +67,7 @@ public class Admin {
         }
     }
 
-    private void increaseSinglePrice(ArrayList<Item> vendingMachine) {
+    private static void increaseSinglePrice(ArrayList<Item> vendingMachine) {
         System.out.println("\n/// INCREASE SINGLE ITEM PRICE ///");
         for (int i = 0; i < vendingMachine.size(); i++) {
             System.out.println((i + 1) + ". " + vendingMachine.get(i).getName());
@@ -97,14 +89,14 @@ public class Admin {
         }
     }
 
-    private void showStockStatus(ArrayList<Item> vendingMachine) {
+    private static void showStockStatus(ArrayList<Item> vendingMachine) {
         System.out.println("\n/// STOCK STATUS ///");
         for (Item item : vendingMachine) {
             System.out.println(item.getName() + ": " + item.getQuantity() + " units - Price: " + item.getPrice() + " CHF");
         }
     }
 
-    public static void see() {
+    public static void printMenu() {
         System.out.println("\n/// ADMIN MENU ///");
         System.out.println("1. Restock Items");
         System.out.println("2. Change All Prices");
@@ -114,4 +106,3 @@ public class Admin {
 
     }
 }
-

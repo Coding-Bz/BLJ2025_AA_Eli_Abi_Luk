@@ -1,18 +1,18 @@
 package ch.noseryoung.blj;
 
+
+
 public class Item {
 
     private final String name;
-    private final String description;
     private final String rarity;
     private double price;
     private final int maxQuantity;
-    private int quantity;
+    private int quantity = 0;
 
-    public Item(String name, String description, String rarity, double price) {
+    public Item(String name, String rarity, double price) {
         this.name = name;
         this.price = price;
-        this.description = description;
         switch (rarity) {
             case "default":
                 this.rarity = "default";
@@ -28,8 +28,9 @@ public class Item {
                 this.maxQuantity = 10;
                 break;
         }
-        this.quantity = maxQuantity;
     }
+
+
 
     // |----- getters -----|
 
@@ -44,6 +45,8 @@ public class Item {
     public int getQuantity() {
         return this.quantity;
     }
+
+
 
     // |----- setters -----|
 
@@ -65,21 +68,5 @@ public class Item {
             this.quantity = maxQuantity;
         }
         // There is no error message, if you try restocking a limited item
-    }
-
-    // |----- print -----|
-
-    public void printItem() {
-        System.out.println(this.name.toUpperCase() + "\n---\n" + this.description + "\nprice: " + this.price );
-        if (this.rarity.equals("limited")) {
-            System.out.println("Item is limited. Buy while it's still available!");
-        }
-        if (this.quantity > 3) {
-            System.out.println("\u001B[32mItem is available\u001B[0m");
-        } else if (this.quantity > 0) {
-            System.out.println("\u001B[33mItem is almost sold out\u001B[0m");
-        } else {
-            System.out.println("\u001B[31mItem is sold out\u001B[0m");
-        }
     }
 }
